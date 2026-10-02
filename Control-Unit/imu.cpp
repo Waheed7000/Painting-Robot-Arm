@@ -97,8 +97,8 @@ void ImuModule::update() {
   computeAccelAngles(data, rollAccDeg, pitchAccDeg);
 
   // Integrate gyro rates
-  float rollGyroDeg = rollDeg + data.gx_dps * dt;
-  float pitchGyroDeg = pitchDeg + data.gy_dps * dt;
+  float rollGyroDeg  = rollDeg  + data.gy_dps * dt;
+  float pitchGyroDeg = pitchDeg + data.gx_dps * dt;
 
   // Complementary filter:
   // gyro gives smooth short-term motion
@@ -181,8 +181,8 @@ void ImuModule::applyAccelLowPassFilter(ScaledImuData& data) {
 }
 
 void ImuModule::computeAccelAngles(const ScaledImuData& data, float& rollAccDeg, float& pitchAccDeg) {
-  rollAccDeg = atan2(data.ay_g, sqrt(data.ax_g * data.ax_g + data.az_g * data.az_g)) * 180.0f / PI;
-  pitchAccDeg = atan2(-data.ax_g, sqrt(data.ay_g * data.ay_g + data.az_g * data.az_g)) * 180.0f / PI;
+  rollAccDeg  = atan2(-data.ax_g, sqrt(data.ay_g * data.ay_g + data.az_g * data.az_g)) * 180.0f / PI;
+  pitchAccDeg = atan2(data.ay_g, sqrt(data.ax_g * data.ax_g + data.az_g * data.az_g)) * 180.0f / PI;
 }
 
 float ImuModule::computeDeltaTime() {

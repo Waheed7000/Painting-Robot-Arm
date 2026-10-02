@@ -7,6 +7,11 @@ The system translates natural hand movements into smooth robotic motion using IM
 
 ---
 
+## 🎥 Project Demonstration
+
+[Watch the Wireless Control Unit Demonstration](https://youtu.be/xwx8KO3fbKQ)
+___
+
 ## 🧠 System Concept
 
 The user holds a controller and tilts it:
@@ -251,4 +256,3 @@ A smooth, intuitive, and intelligent painting robot that:
 - Demonstrates strong system design
 
 ---
-
